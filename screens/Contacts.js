@@ -45,7 +45,7 @@ export default class Contacts extends React.Component {
         name={name}
         avatar={avatar}
         phone={phone}
-        onPress={()=>navigation.push('Profile')} />
+        onPress={()=>navigation.push('Profile', { contact: item })} />
     );
   };
 
