@@ -1,7 +1,7 @@
-import React from 'react';
+import React from'react';
 
-import Profile from './screens/Profile';
+import AppContainer from'./routes';
 
-export default function App() {
-  return <Profile />;
+export default function App(){
+  return <AppContainer />;
 }
