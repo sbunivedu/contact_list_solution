@@ -21,6 +21,7 @@ export default class Contacts extends React.Component {
   };
 
   async componentDidMount() {
+    console.log(this.props);
     try {
       const contacts = await fetchContacts();
       this.setState({
@@ -37,9 +38,14 @@ export default class Contacts extends React.Component {
   }
 
   renderContact = ({ item }) => {
+    const { navigation } = this.props;
     const { name, avatar, phone } = item;
     return (
-      <ContactListItem name={name} avatar={avatar} phone={phone} />
+      <ContactListItem
+        name={name}
+        avatar={avatar}
+        phone={phone}
+        onPress={()=>navigation.push('Profile')} />
     );
   };
 

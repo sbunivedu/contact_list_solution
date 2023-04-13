@@ -11,7 +11,7 @@ export default function AppContainer() {
     <NavigationContainer>
       <Root.Navigator>
         <Root.Screen name="Contacts" component={Contacts} />
-        <Root.Screen name="Profie" component={Profile} />
+        <Root.Screen name="Profile" component={Profile} />
       </Root.Navigator>
     </NavigationContainer>
   )
