@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Contacts from './screens/Contacts';
 import Profile from './screens/Profile';
+import Favorites from './screens/Favorites';
+
 import colors from './utils/colors';
 
 const Root = createNativeStackNavigator()
@@ -10,7 +12,7 @@ const Root = createNativeStackNavigator()
 export default function AppContainer() {
   return (
     <NavigationContainer>
-      <Root.Navigator>
+      <Root.Navigator initialRouteName="Favorites">
         <Root.Screen
           name="Contacts"
           component={Contacts}
@@ -32,6 +34,10 @@ export default function AppContainer() {
               }
             }}}
           />
+        <Root.Screen
+          name="Favorites"
+          component={Favorites}
+        />
       </Root.Navigator>
     </NavigationContainer>
   )
