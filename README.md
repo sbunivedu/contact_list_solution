@@ -8,4 +8,4 @@ Step 3: add stack navigator ([diff](https://github.com/sbunivedu/contact_list_so
 
 Step 4: pass contact info from the Contacts screen to the Profile screen ([diff](https://github.com/sbunivedu/contact_list_solution/commit/be4826b317baf450737204359caf832794fa8195)) up to page 40.
 
-Step 5: customize screen title and header style via navigation options ([diff](https://github.com/sbunivedu/contact_list_solution/commit/641ab5ce9e4cb8288641fd5df62bc05940af0923)).
+Step 5: customize screen title and header style via navigation options ([diff](https://github.com/sbunivedu/contact_list_solution/commit/641ab5ce9e4cb8288641fd5df62bc05940af0923)) up to page 43.
