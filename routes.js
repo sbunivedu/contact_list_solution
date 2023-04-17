@@ -9,6 +9,8 @@ import User from './screens/User';
 
 import colors from './utils/colors';
 
+import { MaterialIcons } from '@expo/vector-icons';
+
 const Root = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 
