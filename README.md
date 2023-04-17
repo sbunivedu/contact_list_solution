@@ -15,3 +15,5 @@ Step 6: add Favorites screen and make it inital route ([diff](https://github.com
 Step 7: add User screen and test it out as initial route ([diff](https://github.com/sbunivedu/contact_list_solution/commit/28a5107f99a0b0cac47226195f0e423e4bf93504)) up to page 440.
 
 Step 8: add a tab navigator and test it out ([diff](https://github.com/sbunivedu/contact_list_solution/commit/a5fab7009f7c0e97f11e093946a57fd7770e92ac)) up to page 441.
+
+Step 9: add stack navigators in tab navigator ([diff](https://github.com/sbunivedu/contact_list_solution/commit/416a9c356cd3c7b7abe060d396f5c6682a5c8ae9)) up to page 449.
