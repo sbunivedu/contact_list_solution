@@ -11,6 +11,10 @@ import colors from './utils/colors';
 
 import { MaterialIcons } from '@expo/vector-icons';
 
+const getTabBarIcon = icon => ({ tintColor }) => (
+  <MaterialIcons name={icon} size={26} style={{ color: tintColor }} />
+);
+
 const Root = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 
@@ -25,12 +29,20 @@ export default function AppContainer() {
             title: 'Contacts',
             headerStyle: {
               backgroundColor: 'white',
-            }
+            },
+            tabBarIcon: getTabBarIcon('list'),
           }}
         />
         <Tab.Screen
           name="Favorites"
           component={Favorites}
+          options={{
+            title: 'Favorites',
+            headerStyle: {
+              backgroundColor: 'white',
+            },
+            tabBarIcon: getTabBarIcon('star'),
+          }}
         />
         <Tab.Screen
           name="User"
@@ -42,6 +54,7 @@ export default function AppContainer() {
               headerStyle: {
                 backgroundColor: colors.blue,
               },
+              tabBarIcon: getTabBarIcon('person'),
             }}}
         />
       </Tab.Navigator>
