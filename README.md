@@ -18,4 +18,21 @@ Step 8: add a tab navigator and test it out ([diff](https://github.com/sbunivedu
 
 Step 9: add stack navigators in tab navigator ([diff](https://github.com/sbunivedu/contact_list_solution/commit/416a9c356cd3c7b7abe060d396f5c6682a5c8ae9)) up to page 449.
 
-Install `npm install @react-navigation/drawer`
+Step 10: switch to drawer navigation from tab navigation ([diff](https://github.com/sbunivedu/contact_list_solution/commit/95b02d2c729b5c305872e5c4dc85a40effcd3eaa)) with some issues that will be fixed later
+
+To implement this step please make the following changes to your project:
+
+Install dependencies:
+```
+npm install @react-navigation/native @react-navigation/drawer react-native-gesture-handler react-native-reanimated
+```
+
+Add the following to the top of `App.js`:
+```
+import 'react-native-gesture-handler';
+```
+
+Change "reanimated" version in `package.json` as follows and run `npm install`.
+```
+"react-native-reanimated": "^2.14.4"
+```
