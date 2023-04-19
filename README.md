@@ -17,3 +17,5 @@ Step 7: add User screen and test it out as initial route ([diff](https://github.
 Step 8: add a tab navigator and test it out ([diff](https://github.com/sbunivedu/contact_list_solution/commit/a5fab7009f7c0e97f11e093946a57fd7770e92ac)) up to page 441.
 
 Step 9: add stack navigators in tab navigator ([diff](https://github.com/sbunivedu/contact_list_solution/commit/416a9c356cd3c7b7abe060d396f5c6682a5c8ae9)) up to page 449.
+
+Install `npm install @react-navigation/drawer`
