@@ -1,4 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, DrawerActions } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -13,25 +13,41 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const Drawer = createDrawerNavigator();
 
-const getDrawerItemIcon = icon=>({tintColor})=>(
-  <MaterialIcons name={icon} size={22} style={{ color: tintColor }} />
+const getDrawerItemIcon = icon=>({color})=>(
+  <MaterialIcons name={icon} size={22} style={{ color: color }} />
 );
 
 export default function AppContainer() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="ContactScreens">
+      <Drawer.Navigator initialRouteName="ContactScreens"
+        >
         <Drawer.Screen
           name="ContactsScreens"
           component={ContactsScreens}
+          options={{
+            drawerIcon: getDrawerItemIcon('person'),
+            drawerLabel: 'Contacts',
+            headerShown: false
+          }}
         />
         <Drawer.Screen
           name="FavoritesScreens"
           component={FavoritesScreens}
+          options={{
+            drawerIcon: getDrawerItemIcon('list'),
+            drawerLabel: 'Favorites',
+            headerShown: false
+          }}
         />
         <Drawer.Screen
-          name="UserScreen"
+          name="User"
           component={UserScreen}
+          options={{
+            drawerIcon: getDrawerItemIcon('star'),
+            drawerLabel: 'User',
+            headerShown: false
+          }}
         />
       </Drawer.Navigator>
     </NavigationContainer>
@@ -43,14 +59,14 @@ const contactsStack = createNativeStackNavigator()
 function ContactsScreens() {
   return (
     <contactsStack.Navigator
-      initialRouteName="Contacts"
-      navigationOptions={{
-        drawerIcon: getDrawerItemIcon('person'),
-      }}>
+      initialRouteName="Contacts">
       <contactsStack.Screen
         name="Contacts"
         component={Contacts}
-        screenOptions={{headerShown:false}}
+        options={({ navigation, route }) => ({
+          headerLeft: ()=>(
+            <MaterialIcons name="menu" size={24} onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />),
+        })}
       />
       <contactsStack.Screen
         name="Profile"
@@ -76,12 +92,14 @@ function FavoritesScreens() {
       <favoritesStack.Screen
         name="Favorites"
         component={Favorites}
-        options={{
+        options={({ navigation, route }) => ({
           title: 'Favorites',
           headerStyle: {
             backgroundColor: 'white',
-          }
-        }}
+          },
+          headerLeft: ()=>(
+            <MaterialIcons name="menu" size={24} onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />),
+        })}
       />
       <favoritesStack.Screen
         name="Profile"
@@ -99,15 +117,15 @@ function UserScreen() {
       <userStack.Screen
         name="User"
         component={User}
-        options={({ route }) => {
-          return {
-            title: 'Me',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: colors.blue,
-            },
-          }
-        }}
+        options={({ navigation, route }) => ({
+          title: 'Me',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.blue,
+          },
+          headerLeft: ()=>(
+            <MaterialIcons name="menu" size={24} onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />),
+        })}
       />
     </userStack.Navigator>
   )
