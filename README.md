@@ -36,3 +36,11 @@ Change "reanimated" version in `package.json` as follows and run `npm install`.
 ```
 "react-native-reanimated": "^2.14.4"
 ```
+
+Step 11: add icons to the drawer menu, hide drawer navigator header when a stack navigator is visible, add a hamburger menu icon to the header of the first screen in each stack navigator to open the drawer ([diff](https://github.com/sbunivedu/contact_list_solution/commit/82b460fd3c6d7f3ffcd8676db0af03a8a85cb62f)).
+
+Resources consulted for implementing this step:
+* https://blog.deversity.com/2021/10/combining-drawer-tab-and-stack.html
+* https://reactnavigation.org/docs/screen-options-resolution/
+* https://reactnavigation.org/docs/hiding-tabbar-in-screens
+* https://reactnavigation.org/docs/header-buttons/
